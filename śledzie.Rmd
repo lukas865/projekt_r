@@ -1,0 +1,22 @@
+---
+title: "Śledzie"
+author: "LD"
+date: "`r format(Sys.time(), '%d %B %Y')`"
+output: 
+  html_document: 
+    keep_md: yes
+    theme: cosmo
+    toc: yes
+    toc_float: true
+---
+```{r pobieranieDanych, message=FALSE, warning=FALSE, cache=TRUE, include=FALSE}
+dane <- read.csv("http://www.cs.put.poznan.pl/dbrzezinski/teaching/sphd/sledzie.csv")
+```
+
+##Podsumowanie
+```{r wyswietlanie, echo=FALSE, echo=FALSE, message=FALSE, warning=FALSE}
+package<-sessionInfo()
+paste(package["basePkgs"], sep = ",", collapse = ""  )
+(package["otherPkgs"])
+summary(head(dane, 10))
+```
